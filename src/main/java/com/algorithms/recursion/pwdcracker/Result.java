@@ -1,28 +1,41 @@
 package com.algorithms.recursion.pwdcracker;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Result {
 
     static final String WRONG_PWD_MSG = "WRONG PASSWORD";
+    private List<String> passwords;
 
-    public static List<String> findWordsInText(List<String> words, String text, int startPos, int strLen) {
-        List<String> result = new ArrayList<>();
-        words.stream()
-                .filter(w -> w.equals(text));
-
-        String nextSubstring =
-        for (text)
+    public Result(List<String> passwords) {
+        this.passwords = passwords;
     }
 
-    public static List<String> getAllSubstrings(String text){
-        List<String> result = new ArrayList<>();
-        return result;
+    private Integer findPwdInText(Set<String> foundWords, String text, Integer startPos, Integer strLen) {
+        Integer endPos = startPos+strLen;
+        String partOfTextToAnalyze = text.substring(startPos, endPos);
+
+        if (passwords.contains(partOfTextToAnalyze)) {
+            foundWords.add(partOfTextToAnalyze);
+            startPos = endPos;
+            strLen = 1;
+        }
+        else {
+            strLen++;
+        }
+
+        if (startPos >= text.length() || endPos >= text.length())
+            return startPos;
+
+        return findPwdInText(foundWords, text, startPos, strLen);
     }
+
+    private boolean isTextContainOnlyPwd(Set<String> foundWords, String text, Integer currentPos){
+        return !foundWords.isEmpty() && (currentPos >= text.length());
+    }
+
     /*
      * Complete the 'passwordCracker' function below.
      *
@@ -32,8 +45,8 @@ public class Result {
      *  2. STRING loginAttempt
      */
 
-    public static String passwordCracker(List<String> passwords, String loginAttempt) {
-        List<String> result = new ArrayList<>();
+    public String passwordCracker(String loginAttempt) {
+        Set<String> result = new HashSet<>();
 
         if (loginAttempt == null || "".equals(loginAttempt)) {
             return WRONG_PWD_MSG;
@@ -43,18 +56,18 @@ public class Result {
             return "";
         }
 
-        List<String> substrings = getAllSubstrings(loginAttempt);
+        Integer currentPos = 0;
+        currentPos = findPwdInText(result, loginAttempt, currentPos, 1);
 
-        for (String substring: substrings) {
-            result.addAll(findWordsInText(passwords, substring, 0, 1));
-        }
-
-        return result.isEmpty() ? WRONG_PWD_MSG : result.stream().collect(Collectors.joining(" "));
+        return isTextContainOnlyPwd(result, loginAttempt, currentPos)
+                ? result.stream().collect(Collectors.joining(" "))
+                : WRONG_PWD_MSG;
     }
 
     public static void main(String[] args) throws IOException {
         List<String> existentPasswords = Arrays.asList(new String[] {"because", "can", "do", "must", "we", "what"});
         String loginAttempt = "wedowhatwemustbecausewecan";
-        String result = passwordCracker(existentPasswords, loginAttempt);
+        String result = new Result(existentPasswords).passwordCracker(loginAttempt);
+        System.out.println("result = " + result);
     }
 }

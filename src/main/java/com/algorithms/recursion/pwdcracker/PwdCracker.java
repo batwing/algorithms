@@ -28,7 +28,7 @@ public class PwdCracker {
 
                 String loginAttempt = bufferedReader.readLine();
 
-                String result = Result.passwordCracker(passwords, loginAttempt);
+                String result = new Result(passwords).passwordCracker( loginAttempt);
 
                 bufferedWriter.write(result);
                 bufferedWriter.newLine();
