@@ -13,7 +13,11 @@ public class Result {
         this.passwords = passwords;
     }
 
-    private Integer findPwdInText(Set<String> foundWords, String text, Integer startPos, Integer strLen) {
+    private boolean isWordPartlyFitAnyWordFromList(String word, List<String> ){
+
+    }
+
+    private Integer findPwdInText(List<String> foundWords, String text, Integer startPos, Integer strLen) {
         Integer endPos = startPos+strLen;
         String partOfTextToAnalyze = text.substring(startPos, endPos);
 
@@ -32,21 +36,12 @@ public class Result {
         return findPwdInText(foundWords, text, startPos, strLen);
     }
 
-    private boolean isTextContainOnlyPwd(Set<String> foundWords, String text, Integer currentPos){
+    private boolean isTextContainOnlyPwd(List<String> foundWords, String text, Integer currentPos){
         return !foundWords.isEmpty() && (currentPos >= text.length());
     }
 
-    /*
-     * Complete the 'passwordCracker' function below.
-     *
-     * The function is expected to return a STRING.
-     * The function accepts following parameters:
-     *  1. STRING_ARRAY passwords
-     *  2. STRING loginAttempt
-     */
-
     public String passwordCracker(String loginAttempt) {
-        Set<String> result = new HashSet<>();
+        List<String> result = new ArrayList<>();
 
         if (loginAttempt == null || "".equals(loginAttempt)) {
             return WRONG_PWD_MSG;
@@ -65,8 +60,34 @@ public class Result {
     }
 
     public static void main(String[] args) throws IOException {
-        List<String> existentPasswords = Arrays.asList(new String[] {"because", "can", "do", "must", "we", "what"});
-        String loginAttempt = "wedowhatwemustbecausewecan";
+        //List<String> existentPasswords = Arrays.asList(new String[] {"because", "can", "do", "must", "we", "what"});
+        //String loginAttempt = "wedowhatwemustbecausewecan";
+        List<String> existentPasswords = Arrays.asList(new String[] {"the", "cake", "is", "a", "lie", "thec", "ak", "ei", "sal", "ie"});
+        String loginAttempt = "thecakeisaliethecakeisalieakthecakeisaliethecakeisalie" +
+                "thecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisalie" +
+                "thecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisalie" +
+                "thecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisalie" +
+                "thecakeisaliethecakeisaliethecakeisalieathecakeisaliethecakeisaliethecakeisalie" +
+                "thecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethethecakeisalie" +
+                "thecakeisaliethecakeisaliethecakeisaliethethecakeisalieakthecakeisalie" +
+                "thecakeisaliethecakeisaliethecakeisaliethecakeisaliesalthecakeisaliethecakeisalie" +
+                "thecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliesal" +
+                "thecakeisaliethecakeisalielieakthecakeisalieliethecakeisaliethecakeisaliethecakeisalie" +
+                "thecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisalie" +
+                "thecakeisaliethecakeisaliethecakeisalieakthecakeisaliethecakeisaliethecakeisaliethecakeisalie" +
+                "thecakeisalieeithecakeisaliethecakeisalieeithecakeisaliethecakeisaliethecakeisalie" +
+                "thecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisalie" +
+                "thecakeisalieiethecakeisaliethecakeisaliethecakeisaliethecakeisalieisthecakeisalie" +
+                "thecakeisalieiscakeakthecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisalie" +
+                "thecakeisaliethecakeisaliethecakeisalieakcakethecakeisaliethecieiethecthecakeisaliethecakeisalie" +
+                "thecakeisaliethecakeisaliethecakeisalieeithecakeisaliethecakeisaliethecakeisaliethecakeisalie" +
+                "thecakeisalieathecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisalie" +
+                "thecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisalie" +
+                "thecakeisalieeithecakeisaliethecakeisaliethecakeisaliethecakeisalieacakethecakeisaliethecakeisaliesal" +
+                "thecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisalieak" +
+                "thecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisalie" +
+                "thecakeisaliethecakeisalie";
+
         String result = new Result(existentPasswords).passwordCracker(loginAttempt);
         System.out.println("result = " + result);
     }
