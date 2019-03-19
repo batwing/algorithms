@@ -13,8 +13,20 @@ public class Result {
         this.passwords = passwords;
     }
 
+    /*
     private boolean isWordPartlyFitAnyWordFromList(String word, List<String> ){
 
+    }
+    */
+
+    private Integer getTheLongestWordSize(List<String> words){
+        if (words == null)
+            return 0;
+
+        return
+                words.stream()
+                .max(Comparator.comparing(String::length))
+                .orElse("").length();
     }
 
     private Integer findPwdInText(List<String> foundWords, String text, Integer startPos, Integer strLen) {
@@ -30,7 +42,7 @@ public class Result {
             strLen++;
         }
 
-        if (startPos >= text.length() || endPos >= text.length())
+        if (startPos >= text.length() || endPos >= text.length() || strLen )
             return startPos;
 
         return findPwdInText(foundWords, text, startPos, strLen);
