@@ -7,17 +7,13 @@ import java.util.stream.Collectors;
 public class Result {
 
     static final String WRONG_PWD_MSG = "WRONG PASSWORD";
+    private int theLongestPwdLength;
     private List<String> passwords;
 
     public Result(List<String> passwords) {
         this.passwords = passwords;
+        this.theLongestPwdLength = getTheLongestWordSize(passwords);
     }
-
-    /*
-    private boolean isWordPartlyFitAnyWordFromList(String word, List<String> ){
-
-    }
-    */
 
     private Integer getTheLongestWordSize(List<String> words){
         if (words == null)
@@ -29,12 +25,12 @@ public class Result {
                 .orElse("").length();
     }
 
-    private Integer findPwdInText(List<String> foundWords, String text, Integer startPos, Integer strLen) {
+    private Integer findPwdInText(LinkedList<String> foundWordsStack, String text, Integer startPos, Integer strLen) {
         Integer endPos = startPos+strLen;
         String partOfTextToAnalyze = text.substring(startPos, endPos);
 
         if (passwords.contains(partOfTextToAnalyze)) {
-            foundWords.add(partOfTextToAnalyze);
+            foundWordsStack.add(partOfTextToAnalyze);
             startPos = endPos;
             strLen = 1;
         }
@@ -42,10 +38,16 @@ public class Result {
             strLen++;
         }
 
-        if (startPos >= text.length() || endPos >= text.length() || strLen )
+        if (strLen > theLongestPwdLength){
+            String wrongWord = foundWordsStack.removeLast();
+            startPos = startPos - wrongWord.length();
+            strLen = wrongWord.length() + 1;
+        }
+
+        if (startPos >= text.length() || endPos >= text.length() )
             return startPos;
 
-        return findPwdInText(foundWords, text, startPos, strLen);
+        return findPwdInText(foundWordsStack, text, startPos, strLen);
     }
 
     private boolean isTextContainOnlyPwd(List<String> foundWords, String text, Integer currentPos){
@@ -53,7 +55,7 @@ public class Result {
     }
 
     public String passwordCracker(String loginAttempt) {
-        List<String> result = new ArrayList<>();
+        LinkedList<String> result = new LinkedList<>();
 
         if (loginAttempt == null || "".equals(loginAttempt)) {
             return WRONG_PWD_MSG;
@@ -74,6 +76,7 @@ public class Result {
     public static void main(String[] args) throws IOException {
         //List<String> existentPasswords = Arrays.asList(new String[] {"because", "can", "do", "must", "we", "what"});
         //String loginAttempt = "wedowhatwemustbecausewecan";
+        /*
         List<String> existentPasswords = Arrays.asList(new String[] {"the", "cake", "is", "a", "lie", "thec", "ak", "ei", "sal", "ie"});
         String loginAttempt = "thecakeisaliethecakeisalieakthecakeisaliethecakeisalie" +
                 "thecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisalie" +
@@ -99,6 +102,9 @@ public class Result {
                 "thecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisalieak" +
                 "thecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisalie" +
                 "thecakeisaliethecakeisalie";
+        */
+        List<String> existentPasswords = Arrays.asList(new String[] {"we", "web", "adaman", "barcod"});
+        String loginAttempt = "webadaman";
 
         String result = new Result(existentPasswords).passwordCracker(loginAttempt);
         System.out.println("result = " + result);
