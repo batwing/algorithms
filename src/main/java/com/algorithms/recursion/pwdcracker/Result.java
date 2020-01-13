@@ -74,8 +74,12 @@ public class Result {
     }
 
     public static void main(String[] args) throws IOException {
+        /**** Test case 1 ***/
         //List<String> existentPasswords = Arrays.asList(new String[] {"because", "can", "do", "must", "we", "what"});
         //String loginAttempt = "wedowhatwemustbecausewecan";
+        /*******  passed  ***************/
+
+        /**** Test case 2 ***/
         /*
         List<String> existentPasswords = Arrays.asList(new String[] {"the", "cake", "is", "a", "lie", "thec", "ak", "ei", "sal", "ie"});
         String loginAttempt = "thecakeisaliethecakeisalieakthecakeisaliethecakeisalie" +
@@ -103,8 +107,23 @@ public class Result {
                 "thecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisalie" +
                 "thecakeisaliethecakeisalie";
         */
+        /*******  passed  ***************/
+
+
+        /**** Test case 4 ***
         List<String> existentPasswords = Arrays.asList(new String[] {"we", "web", "adaman", "barcod"});
         String loginAttempt = "webadaman";
+        *******  passed  ***************/
+
+        /**** Test case 5 ***/
+        // List<String> existentPasswords = Arrays.asList(new String[] {"ends", "open", "stop", "vest", "love"});
+        // String loginAttempt = "vestloveendslovevestloveloveloveendslovevestendsopenloveopenstoploveopenendsopenopenstopvestopenloveloveendsvestopenlovevestopenlovestopendsvestveststopendsendsvestendsloveopenendsstopstopstopveststopveststoplovestoplovestopendsvestveststopopenstopveststoploveveststopstopopenvestveststopvestvestopenvestopenlovevestlovevestopenendslovevestvestlovevestvestendsopenopenopenstopopenendsloveopenopenendsstopopenstopstopstopendsendsstopveststoplovestopstopopenloveopenopenloveendsvestendsendsstopopenopenendsendsstopstoploveloveopenvestopenopenopenstopendslovestopendsstopopenopenstopvestloveendsloveveststopstopopenveststopstopvestlovevestendsveststopstopendsendsendslovestopstoplovelovestopopenendsloveloveloveendslovestopstopvestveststopopenvestvestendsvestopenendslovevestvestvestloveloveopenveststopopenendsendslovevestopenloveopenvestlovestoplovestopvestloveendsloveopenvestvestendsendsvestvestopenopenstopvestopenopenloveopenopenstopvestopenlovelovevestendsopenendsopenopenvestopenendsendsstoplovestopopenopenstopopenlovelovestopopenlovestopvestvestlovevestloveloveendsstopveststoplovestoploveloveloveveststopstoplovelovelovevestendslovestopvestvestvestlovelovestopopenveststopendsloveopenveststopopenvestloveendsvestvestvestlovestoploveopenendsendsendsstoploveopenendsvestveststopopenlovelovevestvestloveendsvestendsveststopopenveststopendsstoploveopenendsstoploveopenstopopenendsvestopenopenstopstopstopendsopenstoplovestoploveopenlovestopendsopenloveendsendsopenloveloveendsopenlovestopendsopenopenveststopopenopenloveendsendsopenendsendsopenvestvestendsopenendslovevestendsendsendslovestopendsstopopenendsloveopenvestopenendsloveendsstoplovevestveststopopenstopstopstopstopstopstopopenloveendsopenopenlovevestlovelovevestendsvestendsendslovestopopenvestendsvestlovestopopenopenopenopenendsopenopenopenstopopenopenopenendsstopstopstopendsendslovestopopenopenopenlovevestendsvestendsloveopenopenstoplovevestvestopenvestlovestopendsvestvestopenlovevestopenlovelovestopstopopenvestlovelovestopvest";
+        /*******  passed  ***************/
+
+        /**** Test case 6 ***/
+        List<String> existentPasswords = Arrays.asList("solo love vest stop open ends dsso".split(" "));
+        String loginAttempt = "solodssoopendssosoloopenendsstopendsvestdssodssostopstopstopopensolovestsolosolosolosolosolosolostoploveopenloveendssoloopenendssolostopopenvestvestlovestopstoplovestopveststopdssodssoendsstopendsvestendslovedssostopopenlovedssosolodssoopenendssoloopenlovestopstopstopsolodssostopdssovestsolovestopendssoopenendsopensolodssovestendslovelovesoloopenendssoloopenloveendsstopvestvestlovesolodssovestvestopenopenstopsolostopstopsolostopdssoveststopsololoveopenlovedssovestlovevestdssoendsendsstopendsvestendsvestlovestopdssoveststopsolovestopendssostopopenopenlovesolovestopendssoopenopenlovesolostoplovelovevestloveendsvestsololovesoloopensolovestopendssoopenopenstopopenendsopenlovevestdssoendsendslovesolostopsololovedssosololoveopenstopopenvestvestopenstopvestdssosolovestsolodssosolostopvestendsopensolodssostopdssoopenstopopenvestopenopensolosolosolodssostopstopendslovelovestopdssoendsendsdssoopenstopvestlovedssostoplovesololovestopopenvestlovestoplovevestsolovestopensololoveopensolovestopendssolovedssostopveststopdssoopensololovevestvestlovestoplovestopsoloendsopensololovevestsolovestopendssovestsololovesoloopensololovelovestopopenendslovesoloopenendssolovestdssostopopenopendssodssoendsopenendsendsopenvestvestsolovestopenlovevestopenendssoloendsstoplovedssoveststopopenopenvestdssoopenopensololoveloveendsopenopenopendssoveststopendsendsstopsolodssosoloopenlovestopsololoveloveloveendssolodssolovestopstopopendssoopensoloopenendssoloendsstopveststopdssoopenendslovevestopenstopdssodssostopendsdssostopendsdssovestdssovestsoloendssolosolosololovestopendsendsvestopendssodssostopendssololoveopenendssolovestlovevestlovesololovesoloveststoplovesoloendsvestveststopdssoendsopenopenendsopensoloopenopenstopsoloopendssostopsoloendsstoploveopenstopendsdssostopstopopendssoendsdssodssolovelovevestendsstoploveendsvestendssolodssosolosolosololovedssolovesolostopsoloendsstopopensolodssoloveloveloveendssolovestlovevestvestdssostopopensolovestopendssostopendsendsdssostopstopveststopendsendsdssoopen";
+        /*******  passed  ***************/
 
         String result = new Result(existentPasswords).passwordCracker(loginAttempt);
         System.out.println("result = " + result);

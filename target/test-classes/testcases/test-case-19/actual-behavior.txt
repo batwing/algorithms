@@ -1,0 +1,11 @@
+Compiler Message
+Wrong Answer
+Input (stdin)
+10
+10
+the cake is a lie thec ak ei sal ie
+thecakeisaliethecakeisalieakthecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisalieathecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethethecakeisaliethecakeisaliethecakeisaliethecakeisaliethethecakeisalieakthecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliesalthecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliesalthecakeisaliethecakeisalielieakthecakeisalieliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisalieakthecakeisaliethecakeisaliethecakeisaliethecakeisaliethecakeisalieeithecakeisaliethec{-truncated-}
+
+
+Expected Output
+the cake is a lie thec ak ei sal ie ak the cake is a lie thec ak ei sal ie thec ak ei sal ie thec ak ei sal ie thec ak ei sal ie thec ak ei sal ie thec ak ei sal ie the cake is a lie the cake is a lie the cake is a lie thec ak ei sal ie the cake is a lie thec ak ei sal ie the cake is a lie the cake is a lie the cake is a lie thec ak ei sal ie the cake is a lie the cake is a lie the cake is a lie the cake is a lie thec ak ei sal ie the cake is a lie a thec ak ei sal ie the cake is a lie thec ak ei sal ie thec ak ei sal ie thec ak ei sal ie thec ak ei sal ie thec ak ei sal ie thec ak ei sal ie the thec ak ei sal ie the cake is a lie thec ak ei sal ie thec ak ei sal ie the thec ak ei sal ie ak thec ak ei sal ie the cake is a lie thec ak ei sal ie thec ak ei sal ie the cake is a lie sal the cake is a lie thec ak ei sal ie the cake is a lie thec ak ei sal ie the cake is a lie the cake is a lie the cake is a lie the cake is a lie sal the cake is a lie the cake is a lie lie ak thec ak ei sal ie lie the cake is a lie{-truncated-}
