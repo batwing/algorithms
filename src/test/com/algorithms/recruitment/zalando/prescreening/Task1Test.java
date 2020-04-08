@@ -1,6 +1,6 @@
-package com.algorithms.recruitment.zalando;
+package com.algorithms.recruitment.zalando.prescreening;
 
-import com.algorithms.recruitment.nexmo.assessment.BiggestPermutatedNumber;
+import com.algorithms.recruitment.zalando.prescreening.Task1;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

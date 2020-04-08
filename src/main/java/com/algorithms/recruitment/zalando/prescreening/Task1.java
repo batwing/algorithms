@@ -1,4 +1,4 @@
-package com.algorithms.recruitment.zalando;
+package com.algorithms.recruitment.zalando.prescreening;
 
 import java.util.Arrays;
 

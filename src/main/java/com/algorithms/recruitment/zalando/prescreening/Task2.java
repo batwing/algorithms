@@ -1,4 +1,4 @@
-package com.algorithms.recruitment.zalando;
+package com.algorithms.recruitment.zalando.prescreening;
 
 public class Task2 {
     public static int approach1(String s) {

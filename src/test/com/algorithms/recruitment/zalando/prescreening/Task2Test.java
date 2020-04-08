@@ -1,5 +1,6 @@
-package com.algorithms.recruitment.zalando;
+package com.algorithms.recruitment.zalando.prescreening;
 
+import com.algorithms.recruitment.zalando.prescreening.Task2;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

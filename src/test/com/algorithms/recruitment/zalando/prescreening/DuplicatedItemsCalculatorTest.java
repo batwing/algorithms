@@ -1,8 +1,8 @@
-package com.algorithms.recruitment.zalando;
+package com.algorithms.recruitment.zalando.prescreening;
 
 import org.junit.Test;
-import com.algorithms.recruitment.zalando.DuplicatedItemsCalculator.StraignQuadraticApproach;
-import com.algorithms.recruitment.zalando.DuplicatedItemsCalculator.LinearCombinatoricApproach;
+import com.algorithms.recruitment.zalando.prescreening.DuplicatedItemsCalculator.StraignQuadraticApproach;
+import com.algorithms.recruitment.zalando.prescreening.DuplicatedItemsCalculator.LinearCombinatoricApproach;
 
 import static org.junit.Assert.assertEquals;
 

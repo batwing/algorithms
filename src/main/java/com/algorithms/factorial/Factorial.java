@@ -21,7 +21,7 @@ public class Factorial {
             throw new IllegalArgumentException("n should be at least 1");
         }
 
-        return LongStream.rangeClosed(1, n).reduce(1, (long x, long y) -> x * y);
+        return LongStream.rangeClosed(1, n).reduce(1, ( x,  y) -> x * y);
     }
 
     public static long getFactorialUsingRecursion(int n){
