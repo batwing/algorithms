@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Task3 {
-    int quadraticSolution(int[] A) {
+    public int quadraticSolution(int[] A) {
         int N = A.length;
         int result = 0;
         for (int i = 0; i < N; i++)
@@ -17,7 +17,7 @@ public class Task3 {
         return result;
     }
 
-    int linearSolution(int[] A) {
+    public int linearSolution(int[] A) {
         Map<Integer, DuplicateInfo> duplicateInfoMap = new HashMap<>();
         int longestDistance = 0;
         for (int i=0; i<A.length; i++){
